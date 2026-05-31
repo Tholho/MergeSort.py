@@ -1,6 +1,6 @@
-from sys import *
+import sys
 
-unsorted_list = [int(x) for x in argv[1:]]
+unsorted_list = [int(x) for x in sys.argv[1:]]
 
 
 def split_and_sort(unsorted_list):

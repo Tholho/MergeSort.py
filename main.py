@@ -7,7 +7,7 @@ def split_and_sort(unsorted_list):
     if len(unsorted_list) < 2:
         return unsorted_list
     else:
-        middle = len(unsorted_list) - len(unsorted_list) // 2       
+        middle = len(unsorted_list) - len(unsorted_list) // 2
         first_half = split_and_sort(unsorted_list[:middle])
         second_half = split_and_sort(unsorted_list[middle:]) 
 

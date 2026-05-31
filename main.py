@@ -3,13 +3,13 @@ import sys
 unsorted_list = [int(x) for x in sys.argv[1:]]
 
 
-def split_and_sort(unsorted_list):
+def merge_sort(unsorted_list):
     if len(unsorted_list) < 2:
         return unsorted_list
     else:
         middle = len(unsorted_list) - len(unsorted_list) // 2
-        first_half = split_and_sort(unsorted_list[:middle])
-        second_half = split_and_sort(unsorted_list[middle:]) 
+        first_half = merge_sort(unsorted_list[:middle])
+        second_half = merge_sort(unsorted_list[middle:]) 
 
     return fuse_sort(first_half, second_half)
 
@@ -31,4 +31,4 @@ def fuse_sort(listA, listB):
     return fused_list
 
 
-print(split_and_sort(unsorted_list))
+print(merge_sort(unsorted_list))

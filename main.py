@@ -2,6 +2,7 @@ from sys import *
 
 unsorted_list = [int(x) for x in argv[1:]]
 
+
 def split_and_sort(unsorted_list):
     if len(unsorted_list) < 2:
         return unsorted_list
@@ -11,6 +12,7 @@ def split_and_sort(unsorted_list):
         second_half = split_and_sort(unsorted_list[middle:]) 
 
     return fuse_sort(first_half, second_half)
+
 
 def fuse_sort(listA, listB):
     i = 0
@@ -27,5 +29,6 @@ def fuse_sort(listA, listB):
     fused_list.extend(listA[i:])
     fused_list.extend(listB[j:])
     return fused_list
+
 
 print(split_and_sort(unsorted_list))

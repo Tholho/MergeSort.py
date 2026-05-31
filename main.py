@@ -1,7 +1,5 @@
 import sys
 
-unsorted_list = [int(x) for x in sys.argv[1:]]
-
 
 def merge_sort(unsorted_list):
     if len(unsorted_list) < 2:
@@ -30,5 +28,14 @@ def fuse_sort(listA, listB):
     fused_list.extend(listB[j:])
     return fused_list
 
-
-print(merge_sort(unsorted_list))
+try:
+    unsorted_list = [int(x) for x in sys.argv[1:]]
+except ValueError:
+    print("This function expects numerical ASCII values only")
+except Exception as err:
+    print(f"unknown error {err=}")
+else:
+    if len(unsorted_list) == 0:
+        print("No value to sort")
+    else:
+        print(merge_sort(unsorted_list))
